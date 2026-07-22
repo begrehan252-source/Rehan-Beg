@@ -1,0 +1,6 @@
+{
+  "name": "FestForge",
+  "description": "FestForge - Event Staffing, Catering Waiters & Uniform Rental Management App",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
