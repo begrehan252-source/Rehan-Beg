@@ -1,0 +1,9 @@
+cat > .devcontainer/devcontainer.json << 'EOF'
+{
+  "name": "Android Dev",
+  "image": "mcr.microsoft.com/devcontainers/java:21",
+  "features": {
+    "ghcr.io/devcontainers/features/android-sdk:1": {}
+  }
+}
+EOF
