@@ -1,0 +1,25 @@
+name: Get SHA
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sha:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Print Debug SHA
+        run: |
+          keytool -list -v \
+          -keystore ~/.android/debug.keystore \
+          -alias androiddebugkey \
+          -storepass android \
+          -keypass android
