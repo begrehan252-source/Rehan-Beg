@@ -51,7 +51,6 @@ import com.example.ui.screens.UniformCatalogScreen
 import com.example.ui.theme.CateringGoldAccent
 import com.example.ui.theme.CateringNavyPrimary
 import com.example.ui.theme.MyApplicationTheme
-import com.example.ui.screens.LoginScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,7 +58,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             MyApplicationTheme {
-                LoginScreen()
+                MainCateringApp()
             }
         }
     }
