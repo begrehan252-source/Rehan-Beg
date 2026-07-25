@@ -16,10 +16,23 @@ jobs:
           distribution: temurin
           java-version: '21'
 
-      - name: Print Debug SHA
+      - name: Generate debug keystore
+        run: |
+          mkdir -p ~/.android
+          keytool -genkeypair \
+            -alias androiddebugkey \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -keystore ~/.android/debug.keystore \
+            -storepass android \
+            -keypass android \
+            -dname "CN=Android Debug,O=Android,C=US"
+
+      - name: Print SHA
         run: |
           keytool -list -v \
-          -keystore ~/.android/debug.keystore \
-          -alias androiddebugkey \
-          -storepass android \
-          -keypass android
+            -keystore ~/.android/debug.keystore \
+            -alias androiddebugkey \
+            -storepass android \
+            -keypass android
