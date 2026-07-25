@@ -51,19 +51,34 @@ import com.example.ui.screens.UniformCatalogScreen
 import com.example.ui.theme.CateringGoldAccent
 import com.example.ui.theme.CateringNavyPrimary
 import com.example.ui.theme.MyApplicationTheme
+import com.example.ui.screens.LoginScreen
 
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity(){
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             MyApplicationTheme {
-                MainCateringApp()
+                AppEntry()
             }
         }
     }
 }
+@Composable
+fun AppEntry() {
+    var loggedIn by remember { mutableStateOf(false) }
 
+    if (loggedIn) {
+        MainCateringApp()
+    } else {
+        LoginScreen(
+            onLoginSuccess = {
+                loggedIn = true
+            }
+        )
+    }
+}
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainCateringApp(
