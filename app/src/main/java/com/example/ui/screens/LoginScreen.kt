@@ -34,7 +34,9 @@ fun LoginScreen(
             value = phone,
             onValueChange = { phone = it },
             label = { Text("Mobile Number") },
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone)
+            singleLine = true,
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
+modifier = Modifier.fillMaxWidth()
         )
 
         Spacer(modifier = Modifier.height(24.dp))
