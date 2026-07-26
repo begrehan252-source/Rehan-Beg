@@ -8,6 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.graphics.Color
 
 @Composable
 fun LoginScreen(
@@ -25,7 +26,7 @@ fun LoginScreen(
 
         Text(
             text = "FestForge Login",
-            color = MaterialTheme.colorScheme.onBackground
+            color = Color.White
 ,
             style = MaterialTheme.typography.headlineMedium
         )
