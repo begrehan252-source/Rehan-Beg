@@ -25,6 +25,8 @@ fun LoginScreen(
 
         Text(
             text = "FestForge Login",
+            color = MaterialTheme.colorScheme.onBackground
+,
             style = MaterialTheme.typography.headlineMedium
         )
 
