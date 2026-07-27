@@ -15,6 +15,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import com.example.R
 import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.foundation.layout.imePadding
 
 @Composable
 fun LoginScreen(
@@ -45,6 +46,7 @@ Box(modifier = Modifier.fillMaxSize()) {
         Column(  
             modifier = Modifier  
                 .fillMaxWidth()  
+                .imePadding()
                 .padding(24.dp),  
             horizontalAlignment = Alignment.CenterHorizontally  
         ) {  
@@ -78,16 +80,18 @@ OutlinedTextField(
 )
            Spacer(modifier = Modifier.height(24.dp))  
 
-            Button(  
-                onClick = { onLoginSuccess() },  
-                modifier = Modifier  
-                    .fillMaxWidth()  
-                    .height(56.dp),  
-                shape = RoundedCornerShape(16.dp),  
-                colors = ButtonDefaults.buttonColors(  
-                    containerColor = Color(0xFFFFD700),  
-                    contentColor = Color.Black  
-                )  
+            Button(
+    onClick = { onLoginSuccess() },
+    enabled = phone.length == 10,
+    modifier = Modifier
+        .fillMaxWidth()
+        .height(56.dp),
+    shape = RoundedCornerShape(16.dp),
+    colors = ButtonDefaults.buttonColors(
+        containerColor = Color(0xFFFFD700),
+        contentColor = Color.Black
+    )
+)
             ) {  
                 Text("Continue")  
             }  
