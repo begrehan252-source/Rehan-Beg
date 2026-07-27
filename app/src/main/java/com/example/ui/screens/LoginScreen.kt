@@ -34,9 +34,12 @@ fun LoginScreen(
 Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(24.dp),
+            .padding(
+             start = 24.dp,
+               end = 24.dp,
+            bottom = 80.dp)
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Bottom
     ) {
 
         Text(
