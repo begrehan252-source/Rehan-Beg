@@ -37,7 +37,7 @@ Box(modifier = Modifier.fillMaxSize()) {
             .fillMaxWidth()  
             .padding(horizontal = 16.dp)  
             .align(Alignment.BottomCenter)
-            .padding(bottom = 10.dp), 
+            .padding(bottom = 0.dp), 
         shape = RoundedCornerShape(24.dp),  
         colors = CardDefaults.cardColors(  
             containerColor = Color.Black.copy(alpha = 0.55f)  
@@ -46,8 +46,9 @@ Box(modifier = Modifier.fillMaxSize()) {
 
         Column(  
             modifier = Modifier  
-                .fillMaxWidth()  
-                .padding(24.dp),  
+                .fillMaxWidth() 
+                .imePadding() 
+                .padding(24.dp), bottom = 12.dp) 
             horizontalAlignment = Alignment.CenterHorizontally  
         ) {  
 OutlinedTextField(
