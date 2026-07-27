@@ -15,6 +15,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import com.example.R
+import androidx.compose.material3.OutlinedTextFieldDefaults
 
 @Composable
 fun LoginScreen(
@@ -53,7 +54,15 @@ Column(
             label = { Text("Mobile Number") },
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
-modifier = Modifier.fillMaxWidth()
+modifier = Modifier.fillMaxWidth(),
+colors = OutlinedTextFieldDefaults.colors(
+    focusedTextColor = Color.White,
+    unfocusedTextColor = Color.White,
+    focusedLabelColor = Color(0xFFFFD700),
+    unfocusedLabelColor = Color.White,
+    focusedBorderColor = Color(0xFFFFD700),
+    unfocusedBorderColor = Color(0xFFFFD700)
+)
         )
 
         Spacer(modifier = Modifier.height(24.dp))
