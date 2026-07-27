@@ -91,10 +91,8 @@ shape = RoundedCornerShape(16.dp),
 colors = ButtonDefaults.buttonColors(
     containerColor = Color(0xFFFFD700),
     contentColor = Color.Black
-),
-    
-    )
-) {
+)
+ ) {
     Text(
     text = "Continue",
     style = MaterialTheme.typography.titleMedium
