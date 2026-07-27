@@ -37,7 +37,7 @@ Column(
             .padding(
              start = 24.dp,
                end = 24.dp,
-            bottom = 80.dp)
+            bottom = 80.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Bottom
     ) {
