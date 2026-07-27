@@ -47,7 +47,6 @@ Box(modifier = Modifier.fillMaxSize()) {
         Column(  
             modifier = Modifier  
                 .fillMaxWidth()  
-                .imePadding()
                 .padding(24.dp),  
             horizontalAlignment = Alignment.CenterHorizontally  
         ) {  
