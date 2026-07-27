@@ -46,9 +46,9 @@ Box(modifier = Modifier.fillMaxSize()) {
 
         Column(  
             modifier = Modifier  
-                .fillMaxWidth() 
-                .imePadding() 
-                .padding(24.dp), bottom = 12.dp) 
+                 .fillMaxWidth()
+.imePadding()
+.padding(horizontal = 24.dp, top = 24.dp, bottom = 12.dp)
             horizontalAlignment = Alignment.CenterHorizontally  
         ) {  
 OutlinedTextField(
