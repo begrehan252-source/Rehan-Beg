@@ -36,7 +36,8 @@ Box(modifier = Modifier.fillMaxSize()) {
         modifier = Modifier  
             .fillMaxWidth()  
             .padding(horizontal = 16.dp)  
-            .align(Alignment.Center),  
+            .align(Alignment.BottomCenter)
+            .padding(bottom = 48.dp), 
         shape = RoundedCornerShape(24.dp),  
         colors = CardDefaults.cardColors(  
             containerColor = Color.Black.copy(alpha = 0.55f)  
