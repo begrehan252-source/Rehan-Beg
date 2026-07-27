@@ -16,6 +16,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import com.example.R
 import androidx.compose.material3.OutlinedTextFieldDefaults
+import androidx.compose.foundation.shape.RoundedCornerShape
 
 @Composable
 fun LoginScreen(
@@ -24,60 +25,82 @@ fun LoginScreen(
     var phone by remember { mutableStateOf("") }
 
     Box(modifier = Modifier.fillMaxSize()) {
-
-    Image(
-        painter = painterResource(id = R.drawable.login_background),
-        contentDescription = null,
-        modifier = Modifier.fillMaxSize(),
-        contentScale = ContentScale.Crop
+Card(
+    modifier = Modifier
+        .fillMaxWidth()
+        .height(320.dp)
+        .padding(horizontal = 16.dp)
+        .align(Alignment.Center),
+         shape = RoundedCornerShape(24.dp),
+    colors = CardDefaults.cardColors(
+        containerColor = Color.Black.copy(alpha = 0.55f)
     )
+) {
+    
 Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(
              start = 24.dp,
                end = 24.dp,
-            bottom = 80.dp),
+            bottom = 180.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Bottom
     ) {
 
-        Text(
-            text = "FestForge Login",
-            color = Color.White
-,
-            style = MaterialTheme.typography.headlineMedium
-        )
-
-        Spacer(modifier = Modifier.height(24.dp))
-
         OutlinedTextField(
             value = phone,
             onValueChange = { phone = it },
-            label = { Text("Mobile Number") },
+            prefix = {
+    Text(
+        text = "+91 ",
+        color = Color.White
+    )
+},
+placeholder = {
+    Text(
+        text = "Enter 10-digit mobile",
+        color = Color.LightGray
+    )
+},
             singleLine = true,
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
 modifier = Modifier.fillMaxWidth(),
+
 colors = OutlinedTextFieldDefaults.colors(
     focusedTextColor = Color.White,
     unfocusedTextColor = Color.White,
-    focusedLabelColor = Color(0xFFFFD700),
-    unfocusedLabelColor = Color.White,
+    focusedPlaceholderColor = Color.LightGray,
+    unfocusedPlaceholderColor = Color.LightGray,
     focusedBorderColor = Color(0xFFFFD700),
     unfocusedBorderColor = Color(0xFFFFD700)
 )
         )
 
         Spacer(modifier = Modifier.height(24.dp))
+Button(
+    onClick = {
+        onLoginSuccess()
+    },
+    modifier = Modifier
+        .fillMaxWidth()
+        .height(56.dp)
+        .padding(horizontal = 8.dp),
+shape = RoundedCornerShape(16.dp),
 
-        Button(
-            onClick = {
-                // Abhi temporary login
-                onLoginSuccess()
-            },
-            modifier = Modifier.fillMaxWidth()
-        ) {
-            Text("Continue")
+colors = ButtonDefaults.buttonColors(
+    containerColor = Color(0xFFFFD700),
+    contentColor = Color.Black
+),
+    
+    )
+) {
+    Text(
+    text = "Continue",
+    style = MaterialTheme.typography.titleMedium
+)
+}
+        
         }
     }
 }
