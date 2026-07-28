@@ -197,7 +197,7 @@ HorizontalDivider(
     modifier = Modifier.weight(1f),
     color = Color.Gray
 )
-}
+
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
@@ -246,4 +246,5 @@ HorizontalDivider(
             Spacer(modifier = Modifier.weight(1f))
         }
     }
+}
 }
