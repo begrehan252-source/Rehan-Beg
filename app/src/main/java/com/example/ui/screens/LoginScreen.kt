@@ -45,15 +45,24 @@ Box(modifier = Modifier.fillMaxSize()) {
     ) {  
 
         Column(  
-            modifier = Modifier
+           modifier = Modifier
     .fillMaxWidth()
     .imePadding()
-    .padding(horizontal = 24.dp, top = 24.dp, bottom = 12.dp),
+    .padding(
+        start = 24.dp,
+        top = 24.dp,
+        end = 24.dp,
+        bottom = 12.dp
+    ),
             horizontalAlignment = Alignment.CenterHorizontally  
         ) {  
 OutlinedTextField(
     value = phone,
-    onValueChange = { phone = it },
+    onValueChange = {
+    if (it.length <= 10 && it.all(Char::isDigit)) {
+        phone = it
+    }
+},
     prefix = {
         Text("+91 ", color = Color.White)
     },
